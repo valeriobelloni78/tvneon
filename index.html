@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta property="og:image" content="immagine1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Il Teatro delle Volpi al Neon">
+    <meta property="og:description" content="Performance e arte sperimentale tra suoni e corpi invisibili">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Il Teatro delle Volpi al Neon</title>
@@ -72,120 +76,244 @@
             font-size: 0.9rem;
         }
     .responsive-img { width: 100%; height: auto; }
+                .language-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1rem;
+        }
         </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Il Teatro delle Volpi al Neon</h1>
-        <h3>Una performance per raggiungere l'invisibilità</h3>
+    <div class="language-switch">
+        <span onclick="switchLanguage('it')" style="cursor: pointer; font-family: 'ProggyClean'; color: #f00; margin-right: 10px;">IT</span>
+        <span onclick="switchLanguage('en')" style="cursor: pointer; font-family: 'ProggyClean'; color: #f00;">EN</span>
+    </div>
+    
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+            });
+        }
+        // Imposta la lingua italiana come default al caricamento
+        window.onload = function() {
+            switchLanguage('it');
+        };
+    </script>
+    
+    
 
-        <div class="video-section">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/tUjIT7DebC8?si=Yubz8Wl0PSXM4fTz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="container">
+        <div class="text-section" data-lang="it">
+            <h1>Il Teatro delle Volpi al Neon</h1>
+            <h3>Una performance per raggiungere l'invisibilità</h3>
         </div>
-        <div class="text-section">
-            
-          <h3>Invisibilità digitale</h3>
+        <div class="text-section" data-lang="en">
+            <h1>The Neon Foxes Theater</h1>
+            <h3>A Performance to Achieve Invisibility</h3>
+        </div>
+            <div class="video-section">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tUjIT7DebC8?si=Yubz8Wl0PSXM4fTz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+    
+
+        <div class="text-section" data-lang="it">
+            <h3>Invisibilità digitale</h3>
             <p>Viviamo in un’epoca in cui la visibilità è la valuta che più ci vincola. Alcuni algoritmi sono programmati per estrarre valore da ogni nostro gesto, catalogandoci in un sistema che riduce l’essere umano a un profilo commerciale composto di dati “estratti” dal nostro quotidiano muoverci nell’infrastruttura digitale.</p>
-            <p>Nelle performance del Teatro delle Volpi al Neon, l’arte decide di scomparire. I corpi, le ombre, i suoni cessano di essere identificabili sfuggendo alle trame della leggibilità.</p>
-            <p>Le persone scompaiono per diventare presenze, i singoli frammenti musicali si fondono in un continuo sonoro indecifrabile.</p>
+            <p>Nelle performance del Teatro delle Volpi al Neon, l’arte decide di scomparire. I corpi, le ombre, i suoni cessano di essere identificabili  sfuggendo alle trame della leggibilità.</p>
+            <p>I corpi scompaiono per diventare presenze, i singoli frammenti musicali si fondono in un continuo sonoro indecifrabile.</p>
             <p>La danza stessa è una dissonanza, non un messaggio, ma un rumore — un disturbo che destabilizza l’infrastruttura.</p>
             <p>Ogni performance delle Volpi è un’anomalia statistica non computabile.</p>
-        <img src="immagine1.jpg" alt="immagine1" style="width: 100%; height: auto;">
+            <img src="immagine1.jpg" alt="immagine1" class="responsive-img">
         </div>
 
-        <div class="text-section">
-            <h3>Un segnale decifrabile è un segnale sfruttabile</h3> 
-           
+        <div class="text-section" data-lang="en" style="display: none;">
+            <h3>Digital Invisibility</h3>
+            <p>We live in an age where visibility is the currency that binds us most. Algorithms are programmed to extract value from our every gesture, cataloging us within a system that reduces the human to a commercial profile – a composite of data “harvested” from our daily navigation through the digital infrastructure.</p>
+            <p>In the performances of the Neon Foxes Theatre, art chooses to disappear. Bodies, shadows, and sounds cease to be identifiable, slipping through the meshes of legibility.</p>
+            <p>Bodies vanish to become presences; isolated musical fragments merge into an indecipherable sonic continuum.</p>
+            <p>The dance itself is dissonance – not a message, but noise – a disruption that destabilizes the infrastructure.</p>
+            <p>Every Foxes performance is an uncomputable statistical anomaly.</p>
+            <img src="immagine1.jpg" alt="immagine1" class="responsive-img">
+        </div>
+        
+        <div class="text-section" data-lang="it">
+            <h3>Un segnale decifrabile è un segnale sfruttabile</h3>
             <p>Essere visibili, oggi, significa rinunciare a essere liberi.</p>
             <p>Con ogni gesto e con ogni suono, il Teatro delle Volpi al Neon evoca un territorio di incomprensibilità.</p>
             <p>Quella delle volpi è una performance che esplora il margine, lo spazio dove il significato evapora.</p>
             <p>Il movimento dei corpi, segmentato e privo di schema, e i suoni scuri e non lineari, si affermano come frammenti di un linguaggio opaco, non catalogabile.</p>
             <p>Gli spiriti delle volpi mutaforma diventano pura anomalia, un rumore che non risponde alle aspettative di riconoscimento della macchina, una frattura nell’infrastruttura che misura e controlla.</p>
             <p>I corpi dietro le maschere al neon diventano statistica imprecisa, eccedenza, frammento illeggibile, il loro rumore non è un errore, ma una zona franca, un luogo dove l’arte si sottrae al dominio della visibilità.</p>
-         <img src="immagine2.jpg" alt="immagine2" class="responsive-img">
+            <img src="immagine2.jpg" alt="immagine2" class="responsive-img">
+        </div>
+      
+        <div class="text-section" data-lang="en" style="display: none;">
+            <h3>A Decipherable Signal is an Exploitable Signal</h3> 
+            <p>To be visible today is to relinquish freedom. </p>
+            <p>With every gesture and every sound, the Neon Foxes Theatre conjures a realm of incomprehensibility.</p>
+            <p>The Foxes’ performance inhabits the margins – a space where meaning dissolves. </p>
+            <p>The segmented, unscripted movement of bodies and the dark, nonlinear sounds assert themselves as fragments of an opaque, unclassifiable language.</p>
+            <p>The shapeshifting spirits of the Foxes become pure anomaly – a noise that defies the machine’s expectations of recognition, a rupture in the infrastructure that measures and controls. </p>
+            <p>Behind the neon masks, the bodies transform into imprecise statistics, excess, unreadable fragments. </p>
+            <p>Their noise is not an error but a sanctuary – a free zone where art withdraws from the dominion of visibility.</p>
+            <img src="immagine2.jpg" alt="immagine2" class="responsive-img">
         </div>
 
-        <div class="text-section">
-            <h3>Il dispositivo dell’anonimato: la maschera</h3> 
-
+        <div class="text-section" data-lang="it">
+            <h3>Il dispositivo dell’anonimato: la maschera</h3>
             <p>Nell’era della sorveglianza onnipresente, il volto è ridotto a un’identità decifrabile, una firma biometrica che ci colloca e ci definisce.</p>
             <p>Le maschere indossate nel Teatro delle Volpi al Neon non sono semplici costumi, sono dispositivi di resistenza, atti di scomparsa.</p>
             <p>Scegliendo l’anonimato come forma di autonomia, le Volpi al Neon diventano presenze inafferrabili, opache, portatrici di un'identità che non può essere ridotta a un insieme di dati.</p>
-            <p>La maschera non cela, ma elimina. È una cancellazione dell’individualità in favore di una collettività indistinta, che si muove in uno spazio sottratto alla riconoscibilità e alla profilazione.</p>
+            <p>La maschera non cela, ma elimina. È una cancellazione dell’individualità in favore di una collettività indistinta, che si muove in uno spazio sottratto alla riconoscibilità e alla profilazione.</p> 
             <p>I corpi e i suoni non offrono narrazioni, sfuggendo ad ogni struttura, si trasformano in ombre pronte a scomparire nell’uragano di dati.</p>
-            <p>L’invisibilità nel rumore statistico.</p>
-                    <img src="immagine3.jpg" alt="immagine3" class="responsive-img">
+            <p>L’invisibilità nel rumore statistico</p>
+            <img src="immagine3.jpg" alt="immagine3" class="responsive-img">
         </div>
 
-        <div class="text-section">
-            <h3>La materia del suono – resistenza e dissonanza</h3> 
+        <div class="text-section" data-lang="en" style="display: none;">
+            <h3>The Device of Anonymity: The Mask</h3> 
+            <p>In the era of pervasive surveillance, the face is reduced to a decipherable identity – a biometric signature that situates and defines us. </p>
+            <p>The masks worn in the Neon Foxes Theatre are not mere costumes; they are devices of resistance, acts of disappearance.</p>
+            <p>By choosing anonymity as a form of autonomy, the Neon Foxes become elusive, opaque presences – carriers of an identity that cannot be reduced to a set of data points.</p>
+            <p>The mask does not conceal; it erases. It is the obliteration of individuality in favor of an indistinct collectivity that moves through a space withdrawn from recognition and profiling.</p>
+            <p>Bodies and sounds offer no narratives, evading every structure, transforming into shadows poised to vanish within the hurricane of data.</p>
+            <p>Invisibility within the noise of statistics.</p>
+            <img src="immagine3.jpg" alt="immagine3" class="responsive-img">
+        </div>
 
-            <p>Nel Teatro delle Volpi al Neon il suono non è un segnale ma un’interferenza.</p>
+        <div class="text-section" data-lang="it"> 
+            <h3>La materia del suono – resistenza e dissonanza</h3>
+            <p>Nel Teatro delle Volpi al Neon il suono non è un segnale ma un’interferenza. </p>
             <p>In un’epoca che misura ogni vibrazione, ogni frequenza, e la traduce in codice, le volpi scolpiscono il suono come una sorta di nebbia digitale, una presenza che, anziché rivelare, nasconde.</p>
             <p>Il flusso che ne risulta è una stratificazione di dissonanze che non suggerisce né direzione né significato; è pura materia sonora che oppone resistenza alla decodifica.</p>
             <p>Nella stratificazione del continuo i suoni perdono la loro leggibilità, diventando massa percepibile ma indistinguibile.</p>
             <p>È così che la performance si configura come uno spazio d’insubordinazione.</p>
-                    <img src="immagine4.jpg" alt="immagine4" class="responsive-img">
+            <p>Un suono che non è né dentro né fuori dalla logica, ma che resiste alla gabbia dello schema.</p>
+            <img src="immagine4.jpg" alt="immagine4" class="responsive-img">
         </div>
 
-        <div class="text-section">
-            <h3>Il Corpo opaco</h3> 
+        <div class="text-section" data-lang="en" style="display: none;">
+            <h3>The Matter of Sound – Resistance and Dissonance</h3>
+            <p>For the Neon Foxes Theatre, sound is not a signal but an interference</p>
+            <p>In an era that measures every vibration, every frequency, and translates them into code, the Foxes sculpt sound as a form of digital mist – a presence that, rather than revealing, conceals.</p>
+            <p>The resulting flow is a stratification of dissonances, suggesting neither direction nor meaning; it is pure sonic matter that resists decoding.</p>
+            <p>Within the continuum of this stratification, sounds lose their legibility, becoming a perceptible yet indistinct mass.</p>
+            <p>Thus, the performance emerges as a space of insubordination with a sound that exists neither within nor outside logic but resists the confines of schema.</p>
+            <img src="immagine4.jpg" alt="immagine4" class="responsive-img">
+        </div>
 
+        <div class="text-section" data-lang="it"> 
+            <h3>Il Corpo opaco </h3>
             <p>Nelle società contemporanee, il corpo è sempre più un oggetto misurabile.</p>
             <p>La vita viene codificata in pattern prevedibili e manipolabili.</p>
             <p>Il corpo si fa dato, questa riduzione non solo sottrae complessità alla corporeità, ma la ingloba in una logica economica di sfruttamento e controllo.</p>
-            <p>Nel Teatro delle Volpi al Neon il corpo è frammentato e non si offre come oggetto estetico o narrativo, ma si manifesta come un’alterità.</p>
-            <p>Quella delle Volpi è una critica performativa al sistema di sorveglianza, un gesto di sottrazione che produce opacità laddove si richiede trasparenza.</p>
-                    <img src="immagine5.jpg" alt="immagine5" class="responsive-img">
+            <p>Questo processo di colonizzazione del corpo attraverso il codice è l’ennesimo tentativo di cattura dell’umano nell’inesorabile logica del calcolo.</p>
+            <p>Nel Teatro delle Volpi al Neon il corpo è frammentato e non si offre come oggetto estetico o narrativo, ma si manifesta come un’alterità alla grammatica convenzionale del movimento.</p>
+            <p>Quella delle Volpi è una pratica che destabilizza le tradizioni del linguaggio corporeo, è una critica performativa al sistema di sorveglianza, un gesto di sottrazione che produce opacità laddove si richiede trasparenza.</p>
+            <p>L’opacità non è semplicemente un’assenza di visibilità, ma una scelta politica e artistica. In un’epoca che esige trasparenza di ogni azione, le volpi rivendicano il diritto del corpo a nascondersi, a non essere profilato, a sottrarsi. </p>
+            <p>Il corpo diventa una presenza senza un'identità tracciabile.</p>
+            <img src="immagine5.jpg" alt="immagine5" class="responsive-img">
+        </div>
+      
+        <div class="text-section" data-lang="en" style="display: none;">
+            <h3>The Opaque Body</h3>
+            <p>In contemporary societies, the body increasingly becomes a measurable object.</p>
+            <p>Life is codified into predictable and manipulable patterns.</p>
+            <p>The body turns into data – this reduction not only strips corporeality of its complexity but also absorbs it into an economic logic of exploitation and control.</p>
+            <p>This process of bodily colonization through code marks yet another attempt to capture the human within the relentless logic of calculation.</p>
+            <p>In the Neon Foxes Theatre, the body is fragmented and does not present itself as an aesthetic or narrative object, but manifests as an alterity to the conventional grammar of movement.</p>
+            <p>The practice of the Foxes destabilizes the traditions of corporeal language; it is a performative critique of the surveillance system, an act of subtraction that generates opacity where transparency is demanded.</p>
+            <p>Opacity is not merely the absence of visibility – it is a political and artistic choice. In an era that demands transparency in every action, the Foxes assert the body’s right to hide, to resist profiling, to withdraw.</p>
+            <p>The body becomes a presence devoid of a traceable identity.</p>
+            <img src="immagine5.jpg" alt="immagine5" class="responsive-img">
         </div>
 
-        <div class="text-section">
-            <h3>L’Ombra come linguaggio – l’impronta di un passaggio</h3> 
-
-            <p>Cosa ci resta una volta che l’identità è cancellata?</p>
-            <p>Il Teatro delle Volpi al Neon fa dell’ombra il suo mezzo espressivo, il suo linguaggio.</p>
-            <p>Le ombre, che emergono dal flusso di dati, non sono semplici duplicati, ma impronte di un passaggio.</p>
-            <p>L’ombra è memoria dell’assenza, una traccia impalpabile che non si offre alla decodifica.</p>
-            <p>Ogni performer è una figura senza identità, come un ricordo impossibile da afferrare.</p>
-                    <img src="immagine6.jpg" alt="immagine6" class="responsive-img">
+        <div class="text-section" data-lang="it"> 
+            <h3>L’Ombra come linguaggio – l’impronta di un passaggio</h3>
+            <p>Cosa ci resta una volta che l’identità è cancellata? </p>
+            <p>Il Teatro delle Volpi al Neon fa dell’ombra il suo mezzo espressivo, il suo linguaggio. </p>
+            <p>Queste ombre, che emergono dal flusso di dati, non sono semplici duplicati dei performer, ma impronte di un passaggio.</p>
+            <p>L’ombra non ha un volto né una forma stabile; è memoria dell’assenza, una traccia impalpabile che non si offre alla decodifica. </p>
+            <p>Ogni performer è una figura senza identità, la cui esistenza si disperde in un profilo evanescente, come un ricordo impossibile da afferrare.</p>
+            <p>Le ombre stesse diventano così un gesto di resistenza, un rifugio, una dimensione parallela dove la trasparenza e la tracciabilità non esistono. </p>
+            <img src="immagine6.jpg" alt="immagine6" class="responsive-img">
         </div>
-        
+
+        <div class="text-section" data-lang="en" style="display: none;">
+            <h3>Shadow as Language – The Trace of a Passage</h3>
+            <p>What remains once identity is erased?</p>
+            <p>At the Neon Foxes Theatre, shadow becomes the expressive medium, the language. </p>
+            <p>These shadows, emerging from the flow of data, are not mere duplicates of the performers but traces of a passage.</p>
+            <p>The shadow holds neither face nor stable form; it is the memory of absence – an intangible mark that resists decoding.</p>
+            <p>Each performer is a figure without identity, their existence dissolving into an evanescent profile, like a memory impossible to grasp.</p>
+            <p>The shadows themselves become an act of resistance, a refuge, a parallel dimension where transparency and traceability do not exist.</p>
+            <img src="immagine6.jpg" alt="immagine6" class="responsive-img">
+        </div>
+
         <div class="video-section">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/uQrpeP_PiKM?si=o07iAyNoesJpq02u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        
-        <div class="text-section">
-            <h3>La nebbia sonora e l’anomalia percettiva (parte1)</h3> 
-
-            <p>Il suono viene trattato come un’informazione pura, trasformata in dati, segmenti e segnali facilmente decifrabili.</p>
-            <p>Nelle performance del Teatro delle Volpi al Neon, il suono si oppone all’analisi algoritmica, diventando barriera.</p>
-            <p>Il suono è ostacolo, qualcosa che confonde e disturba gli schemi di comprensione.</p>
-                    <img src="immagine7.jpg" alt="immagine7" class="responsive-img">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uQrpeP_PiKM?si=o07iAyNoesJpq02u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
-        <div class="text-section">
-            <h3>La nebbia sonora e l’anomalia percettiva (parte2)</h3> 
-
-            <p>La stratificazione sonora non segue nessuna melodia o pattern ritmico.</p>
-            <p>Le frequenze si sovrappongono, creando una nebbia sonica di alta o bassa densità.</p>
-            <p>Il suono diventa esperienza sensoriale, avvolgendo pubblico e performer in uno spazio insondabile.</p>
-                    <img src="immagine8.jpg" alt="immagine8" class="responsive-img">
+        <div class="text-section" data-lang="it"> 
+            <h3>La nebbia sonora e l’anomalia percettiva. (parte1) </h3>
+            <p>Nella società digitale contemporanea, il suono viene trattato come un’informazione pura, trasformata in dati, segmenti e segnali che sono facilmente decifrabili, codificabili e classificabili. </p>
+            <p>In quest’ottica, il suono, imbrigliato nella gabbia delle sue sovrastrutture (la musica), diventa trasparente, ridotto alla sua funzione di “segnale”, un impulso diretto che può essere letto, compreso e immesso all’interno delle infrastrutture di analisi, per essere più facilmente fruito dall’udito del consumatore. </p>
+            <p>Nelle performance del Teatro delle Volpi al Neon questo principio fondamentale viene sovvertito proponendo il suono come una sorta di barriera, un campo opaco che si oppone all’analisi algoritmica, un’anomalia percettiva all’interno di un rituale di insubordinazione sensoriale. </p>
+            <p>Il suono non cerca di essere accolto dall’ascoltatore o interpretato da un algoritmo. Al contrario, si erge come un ostacolo, qualcosa che confonde, che disturba gli schemi di comprensione. </p>
+            <img src="immagine7.jpg" alt="immagine7" class="responsive-img">
         </div>
 
-        <div class="text-section">
-            <h3>Il Teatro delle Volpi al Neon</h3> 
+        <div class="text-section" data-lang="en" style="display: none;">
+            <h3>The Sonic Fog and the Perceptual Anomaly (Part 1)</h3>
+            <p>In contemporary digital society, sound is treated as pure information – transformed into data, segments, and signals that are easily decipherable, codifiable, and classifiable. </p>
+            <p>From this perspective, sound, entangled in the cage of its superstructures (music), becomes transparent, reduced to its function as a “signal” – a direct impulse that can be read, understood, and fed into analytic infrastructures for seamless consumption by the listener. </p>
+            <p>In the performances of the Neon Foxes Theatre, this fundamental principle is subverted, presenting sound as a kind of barrier – an opaque field that resists algorithmic analysis, a perceptual anomaly within a ritual of sensory insubordination.</p>
+            <p>Sound does not seek to be embraced by the listener or interpreted by an algorithm. On the contrary, it stands as an obstacle – something that confuses, that unsettles the frameworks of comprehension.</p>
+            <img src="immagine7.jpg" alt="immagine7" class="responsive-img">
+        </div>
 
-            <p>Il Teatro delle Volpi al Neon agisce sulla stratificazione di piani di opacità.</p>
-            <p>L’opacità è politica ed estetica, creando uno spazio libero dalla sorveglianza.</p>
-            <p>I corpi e i suoni si dissolvono, si frammentano e si oppongono.</p>
-            <p>In un mondo ossessionato dalla visibilità, questa performance rivendica il diritto di scomparire.</p>
-                    <img src="immagine9.jpg" alt="immagine9" class="responsive-img">
+        <div class="text-section" data-lang="it">
+            <h3>La nebbia sonora e l’anomalia percettiva. (parte2)</h3>
+            <p>La stratificazione sonora non segue nessuna melodia, non si appoggia su nessun pattern ritmico, ma sovrappone una serie di frequenze che sembrano amplificarsi l’una con l’altra, creando una nebbia sonica nella quale a scorrere sono solo zone di alta o bassa densità.</p>
+            <p>In questa nebbia le volpi “scolpiscono” la materia sonora, modellando un suono che non è più un mezzo di comunicazione, ma un’esperienza sensoriale quasi tattile.</p>
+            <p>La nebbia sonora avvolge sia le volpi che il pubblico in uno spazio insondabile nel quale lo smarrimento intersoggettivo crea vicinanza nell’invisibilità.</p>
+            <img src="immagine8.jpg" alt="immagine8" class="responsive-img">
+        </div>
+
+        <div class="text-section" data-lang="en" style="display: none;">
+            <h3>The Sonic Fog and the Perceptual Anomaly (Part 2)</h3>
+            <p>The stratification of sound follows no melody, adheres to no rhythmic pattern, but layers frequencies that seem to amplify one another, generating a sonic fog where only zones of high or low density move and shift.</p>
+            <p>Within this fog, the Foxes “sculpt” sonic matter, shaping sound into something that no longer serves as a vehicle for communication but becomes an almost tactile sensory experience.</p>
+            <p>The sonic fog envelops both the Foxes and the audience, immersing them in an unfathomable space where shared disorientation forges intimacy through invisibility.</p>
+            <img src="immagine8.jpg" alt="immagine8" class="responsive-img">
+        </div>
+
+        <div class="text-section" data-lang="en" style="display: none;">
+            <h3>The Neon Foxes Theater</h3>
+            <p>The Neon Foxes Theatre is a performance that operates through the layering of various planes of opacity</p>
+            <p>An opacity that is both political and aesthetic. It is the creation of a space liberated from surveillance, where bodies and sounds cease to be objects of control and instead become sites of resistance.</p>
+            <p>There is no function, only becoming – bodies and sounds dissolve, fragment, and oppose. </p>
+            <p>In a world obsessed with visibility and legibility, this performance asserts the right to disappear. </p>
+            <p>It is the art of dissolution – the aesthetics of a body that denies the machine, reconfiguring itself into a dense, dark noise where profiles become evanescent and codes blend into the fog.</p>
+            <img src="immagine9.jpg" alt="immagine9" class="responsive-img">
+        </div>
+
+        <div class="text-section" data-lang="it"> 
+            <h3>Teatro delle Volpi al Neon</h3>
+            <p>Il Teatro delle Volpi al Neon è una performance che agisce sulla stratificazione di vari piani di opacità. </p>
+            <p>Un’opacità che è al tempo stesso politica ed estetica.</p> 
+            <p>È la creazione di uno spazio libero dalla sorveglianza, dove i corpi e i suoni non sono più oggetti di controllo, ma luoghi di resistenza. </p>
+            <p>Non c’è funzione, ma puro divenire: i corpi e i suoni si dissolvono, si frammentano e si oppongono. </p>
+            <p>In un mondo ossessionato dalla visibilità e dalla leggibilità, questa performance rivendica il diritto di scomparire. </p>
+            <p>È l’arte della dissoluzione, l’estetica di un corpo che si nega alla macchina e si riconfigura in un rumore oscuro e denso nel quale i profili sono evanescenti e i codici si mescolano nella nebbia.</p>
+            <img src="immagine9.jpg" alt="immagine9" class="responsive-img">
         </div>
 
         <footer>
             <p>CC TVN 2024 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">testi immagini e suoni sono rilasciati con licenza Creative Commons Sharealike 4.0</a></p>
         </footer>
+        
 </body>
 </html>
-
-
