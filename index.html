@@ -83,6 +83,102 @@
             font-size: 1rem;
         }
         </style>
+    <script>
+        // Available languages in the document
+        const availableLanguages = ['it', 'en', 'fr'];
+        
+        // Function to get URL parameter
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        
+        // Function to detect browser language
+        function detectBrowserLanguage() {
+            // Get browser languages in order of preference
+            const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage];
+            
+            // Check each browser language against available languages
+            for (let browserLang of browserLanguages) {
+                // Extract the primary language code (e.g., 'en' from 'en-US')
+                const primaryLang = browserLang.toLowerCase().split('-')[0];
+                
+                // Check if this language is available
+                if (availableLanguages.includes(primaryLang)) {
+                    return primaryLang;
+                }
+            }
+            
+            // Fallback to Italian if no match found
+            return 'it';
+        }
+        
+        // Function to determine which language to use
+        function determineLanguage() {
+            // First priority: URL parameter
+            const urlLang = getUrlParameter('lang');
+            if (urlLang && availableLanguages.includes(urlLang.toLowerCase())) {
+                return urlLang.toLowerCase();
+            }
+            
+            // Second priority: Browser language
+            return detectBrowserLanguage();
+        }
+        
+        // Enhanced switchLanguage function
+        function switchLanguage(lang) {
+            // Validate language
+            if (!availableLanguages.includes(lang)) {
+                lang = 'it'; // fallback
+            }
+            
+            // Hide all language content
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Show selected language content
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.style.display = 'block';
+            });
+            
+            // Update URL parameter without reloading the page
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            window.history.replaceState({}, '', url);
+            
+            // Update visual indicator of active language (optional)
+            updateLanguageSwitcherStyles(lang);
+        }
+        
+        // Function to update visual styles of language switcher
+        function updateLanguageSwitcherStyles(activeLang) {
+            // Reset all language switcher styles
+            document.querySelectorAll('.language-switch span').forEach(span => {
+                span.style.fontWeight = 'normal';
+                span.style.textDecoration = 'none';
+            });
+            
+            // Highlight active language
+            const activeSpan = document.querySelector(`.language-switch span[onclick*="${activeLang}"]`);
+            if (activeSpan) {
+                activeSpan.style.fontWeight = 'bold';
+                activeSpan.style.textDecoration = 'underline';
+            }
+        }
+        
+        // Initialize on page load
+        window.onload = function() {
+            const selectedLanguage = determineLanguage();
+            switchLanguage(selectedLanguage);
+        };
+        
+        // Handle browser back/forward navigation
+        window.addEventListener('popstate', function() {
+            const selectedLanguage = determineLanguage();
+            switchLanguage(selectedLanguage);
+        });
+    </script>
 </head>
 <body>
     <div class="language-switch">
