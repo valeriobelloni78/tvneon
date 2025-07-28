@@ -109,8 +109,8 @@
                 }
             }
             
-            // Fallback to Italian if no match found
-            return 'it';
+            // Fallback to French if no match found
+            return 'fr';
         }
         
         // Function to determine which language to use
@@ -129,7 +129,7 @@
         function switchLanguage(lang) {
             // Validate language
             if (!availableLanguages.includes(lang)) {
-                lang = 'it'; // fallback
+                lang = 'fr'; // fallback
             }
             
             // Hide all language content
