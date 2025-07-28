@@ -109,8 +109,8 @@
                 }
             }
             
-            // Fallback to French if no match found
-            return 'fr';
+            // Fallback to Italian if no match found
+            return 'it';
         }
         
         // Function to determine which language to use
@@ -125,11 +125,11 @@
             return detectBrowserLanguage();
         }
         
-        // Enhanced switchLanguage function
+        // Enhanced switchLanguage function (will replace the existing one)
         function switchLanguage(lang) {
             // Validate language
             if (!availableLanguages.includes(lang)) {
-                lang = 'fr'; // fallback
+                lang = 'it'; // fallback
             }
             
             // Hide all language content
@@ -147,7 +147,7 @@
             url.searchParams.set('lang', lang);
             window.history.replaceState({}, '', url);
             
-            // Update visual indicator of active language (optional)
+            // Update visual indicator of active language
             updateLanguageSwitcherStyles(lang);
         }
         
@@ -167,16 +167,36 @@
             }
         }
         
-        // Initialize on page load
-        window.onload = function() {
+        // Initialize language detection
+        function initializeLanguage() {
             const selectedLanguage = determineLanguage();
+            console.log('Selected language:', selectedLanguage); // Debug log
             switchLanguage(selectedLanguage);
-        };
+        }
+        
+        // Wait for DOM to be fully loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeLanguage);
+        } else {
+            initializeLanguage();
+        }
         
         // Handle browser back/forward navigation
         window.addEventListener('popstate', function() {
             const selectedLanguage = determineLanguage();
             switchLanguage(selectedLanguage);
+        });
+        
+        // Override the window.onload if it exists to prevent conflicts
+        window.addEventListener('load', function() {
+            // Ensure language is set even if DOMContentLoaded didn't fire properly
+            const currentLang = determineLanguage();
+            const visibleElements = document.querySelectorAll('[data-lang][style*="block"], [data-lang]:not([style*="none"])');
+            
+            // If no language is currently visible, initialize
+            if (visibleElements.length === 0) {
+                initializeLanguage();
+            }
         });
     </script>
 </head>
